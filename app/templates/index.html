@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Olá {{ user.username }}!</h1>
+<h1>Hello, {{ user.username }}!</h1>
 <div>
     {% for post in posts %}
-        <p>{{ post.autor.username }} says: <strong>{{ post.body }}</strong></p>
+        <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
     {% else %}
-        <p>Sorry, there are no post available!</p>
+        <p>Sorry, there are no posts available!</p>
     {% endfor %}
 </div>
 {% endblock %}
