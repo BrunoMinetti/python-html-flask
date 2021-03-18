@@ -1,14 +1,11 @@
-<!-- Comentário -->
-<html>
-    <head>
-        <title>{{ title }} - Microblog </title>
-    </head>
-    <body>
-        <h1>Olá {{ user.username }}!</h1>
-        <div>
-            {% for post in posts %}
-                <p>{{ post.autor.username }} says: <strong>{{ post.body }}</strong></p>
-            {% endfor %}
-        </div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Olá {{ user.username }}!</h1>
+<div>
+    {% for post in posts %}
+        <p>{{ post.autor.username }} says: <strong>{{ post.body }}</strong></p>
+    {% else %}
+        <p>Sorry, there are no post available!</p>
+    {% endfor %}
+</div>
+{% endblock %}
